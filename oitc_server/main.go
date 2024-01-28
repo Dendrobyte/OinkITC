@@ -53,6 +53,8 @@ func handleConnection(conn net.Conn) {
 	}
 
 	var player Player
+
+	// TODO: Use protobuf! Bonus goal, at least.
 	err = json.Unmarshal([]byte(message), &player)
 	if err != nil {
 		fmt.Println("Error parsing message to json: ", err)

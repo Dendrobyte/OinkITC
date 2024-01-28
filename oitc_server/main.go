@@ -1,6 +1,7 @@
 package main
 
 import (
+	"bufio"
 	"encoding/json"
 	"fmt"
 	"net"
@@ -20,6 +21,7 @@ func main() {
 		os.Exit(1)
 	}
 	defer listener.Close()
+	fmt.Println("Start successful!")
 
 	// Eternally listen for incoming connections and spin up a goroutine to handle it
 	for {
@@ -39,19 +41,24 @@ type Player struct {
 }
 
 func handleConnection(conn net.Conn) {
+	// TODO: Do I want to close it? Or keep a connection open with every single player... probably.
 	defer conn.Close()
 
-	fmt.Println("Connection Received | LocalAddr:", conn.LocalAddr(), "| RemoteAddr:", conn.RemoteAddr())
+	// TODO: Could set up some logging. Otherwise just a prefix for what connection is being consistent or something. This'll be spammy if I keep too much in though.
+	//fmt.Println("Connection Received | LocalAddr:", conn.LocalAddr(), "| RemoteAddr:", conn.RemoteAddr())
 
-	fmt.Println("data:", conn)
-
-	var player Player
-	decoded := json.NewDecoder(conn)
-	print("Decoded:", decoded)
-	err := decoded.Decode(&player)
+	message, err := bufio.NewReader(conn).ReadString('\n')
 	if err != nil {
-		fmt.Println("Errored out :\\", err)
+		fmt.Println("Issue reading message: ", err)
 	}
 
-	fmt.Println("The sent user is", player)
+	var player Player
+	err = json.Unmarshal([]byte(message), &player)
+	if err != nil {
+		fmt.Println("Error parsing message to json: ", err)
+	}
+
+	returnStr := "Received! Closing out connection. The changed name is: " + player.Name + "-001"
+	fmt.Println("Connection from ", conn.RemoteAddr(), " processed.")
+	conn.Write([]byte(returnStr))
 }

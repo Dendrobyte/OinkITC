@@ -1,6 +1,6 @@
 # Oink in the Chamber
 
-Welcome to OinkITC! This game is my second game project (the first was a Tetris clone). It is inspired by the original [One in the Chamber](https://callofduty.fandom.com/wiki/One_in_the_Chamber) gamemode from Call of Duty. I first wrote the game [as a Minecraft plugin](https://github.com/oinkcraft/OneInTheChamber) a few years ago. The name / acronym will have to change, but for now "Oink" comes from that Minecraft server being named "Oinkcraft".
+Welcome to OinkITC! This game is my second game project (the first was a Tetris clone). It is inspired by the original [One in the Chamber](https://callofduty.fandom.com/wiki/One_in_the_Chamber) gamemode from Call of Duty. I first wrote the game [as a Minecraft plugin](https://github.com/oinkcraft/OneInTheChamber) a few years ago. The name / acronym looks like it's going to stick, with everything have a vague pig theme...
 
 You can find a devlog to wrap up the project [on my YouTube channel!](http://www.youtube.com/markbacon78). Goal is to make it April's devlog.
 

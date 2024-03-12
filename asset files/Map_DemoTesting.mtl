@@ -1,0 +1,22 @@
+# Blender 4.0.2 MTL File: 'Map_DemoTesting.blend'
+# www.blender.org
+
+newmtl Floating
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.011595 0.068976 0.223658
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+
+newmtl Floor
+Ns 168.515030
+Ka 0.727626 0.727626 0.727626
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 3
+map_Kd materials/StoneFloor/Stylized_Stone_Floor_005_basecolor.jpg

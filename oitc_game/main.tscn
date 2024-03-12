@@ -1,13 +1,31 @@
-[gd_scene load_steps=3 format=3 uid="uid://dtmkxjcyt54pv"]
+[gd_scene load_steps=5 format=3 uid="uid://dtmkxjcyt54pv"]
 
-[ext_resource type="Script" path="res://CollisionShape3D.gd" id="1_d8d7x"]
+[ext_resource type="Script" path="res://BasicMovement.gd" id="1_3ixlq"]
+[ext_resource type="PackedScene" uid="uid://bno4ksm8i2rwp" path="res://map_demo_testing.tscn" id="2_tddab"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_td52d"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_komh2"]
 
 [node name="Main" type="Node"]
 
 [node name="CharacterBody3D" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 17.9562, 0)
+script = ExtResource("1_3ixlq")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
 shape = SubResource("CapsuleShape3D_td52d")
-script = ExtResource("1_d8d7x")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D/CollisionShape3D"]
+mesh = SubResource("CapsuleMesh_komh2")
+
+[node name="Camera3D" type="Camera3D" parent="CharacterBody3D"]
+transform = Transform3D(0.153745, 0, 0.988111, 0, 1, 0, -0.988111, 0, 0.153745, 0, 0, 0)
+
+[node name="Map_DemoTesting" parent="." instance=ExtResource("2_tddab")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 23.0399, -10.8626)
+light_energy = 5.782

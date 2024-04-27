@@ -1,7 +1,11 @@
-[gd_scene format=3 uid="uid://dtmkxjcyt54pv"]
+[gd_scene load_steps=3 format=3 uid="uid://dtmkxjcyt54pv"]
+
+[ext_resource type="PackedScene" uid="uid://tsjqjcqyrxwx" path="res://map_test.tscn" id="1_71idi"]
+[ext_resource type="PackedScene" uid="uid://br1o760sbef62" path="res://first_person_character.tscn" id="2_8628q"]
 
 [node name="Main" type="Node"]
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 23.0399, -10.8626)
-light_energy = 5.782
+[node name="Map" parent="." instance=ExtResource("1_71idi")]
+
+[node name="Node3D" parent="." instance=ExtResource("2_8628q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.115112, 0.947526, -0.151949)

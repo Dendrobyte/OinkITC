@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://br1o760sbef62"]
 
 [ext_resource type="Script" path="res://MainPlayerMovement.gd" id="1_ge41p"]
-[ext_resource type="PackedScene" uid="uid://5u6nv6ighet2" path="res://assets/Crossbow_v1.glb" id="2_oqtfp"]
-[ext_resource type="PackedScene" uid="uid://bjxlx7xw4wxfg" path="res://assets/Bolt_v1.glb" id="3_rb7g2"]
+[ext_resource type="PackedScene" uid="uid://bk0k7ykyj1rpc" path="res://model_nodes/CrossbowItem.tscn" id="2_7spyq"]
+[ext_resource type="Script" path="res://model_nodes/CrossbowItem.gd" id="3_6j3e8"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4eda3"]
 
@@ -17,11 +17,9 @@ script = ExtResource("1_ge41p")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.00003, 0)
 shape = SubResource("CapsuleShape3D_4eda3")
 
-[node name="Crossbow_v1" parent="CharacterBody3D" instance=ExtResource("2_oqtfp")]
+[node name="Crossbow" parent="CharacterBody3D" instance=ExtResource("2_7spyq")]
 transform = Transform3D(0.64, 0, 0, 0, 0.64, 0, 0, 0, 0.64, -0.623538, 0.770408, -1.11517)
-
-[node name="Bolt_v1" parent="CharacterBody3D/Crossbow_v1" instance=ExtResource("3_rb7g2")]
-transform = Transform3D(1.5625, 0, 0, 0, 1.5625, 0, 0, 0, 0.916031, -0.0193428, -0.340722, 0.495325)
+script = ExtResource("3_6j3e8")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00532877, 1.0161, 0.00518882)

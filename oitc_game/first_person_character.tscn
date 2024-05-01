@@ -20,6 +20,7 @@ shape = SubResource("CapsuleShape3D_4eda3")
 [node name="Crossbow" parent="CharacterBody3D" instance=ExtResource("2_7spyq")]
 transform = Transform3D(0.64, 0, 0, 0, 0.64, 0, 0, 0, 0.64, -0.623538, 0.770408, -1.11517)
 script = ExtResource("3_6j3e8")
+bolt_speed = null
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00532877, 1.0161, 0.00518882)

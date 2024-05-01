@@ -8,15 +8,32 @@ For now, just one until it's shot.
 """
 
 @export_range(1, 200)
-var bolt_speed: int = 10 # TODO: move this?
+var bolt_speed: int = 1 # TODO: move this?
+var currBolt
+# TODO: hold on to start position, etc. here instead of in _process
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	currBolt = $StaticBolt # The one initially in the scene tree
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	if Input.is_action_just_pressed("fire"):
-		$BoltItem.fire(bolt_speed)
+		var boltPosition = currBolt.position
+		var boltRotation = currBolt.rotation
+		# Remove static bolt
+		currBolt.queue_free()
+		# Spawn in dynamic bolt that is free from parent node
+		var dynamicBolt = load("res://model_nodes/DynamicBoltItem.tscn").instantiate()
+		dynamicBolt.position = boltPosition; # TODO: Confirm deep copy 
+		dynamicBolt.rotation = boltRotation;
+		get_parent().get_parent().add_child(dynamicBolt)
+		dynamicBolt.fire(bolt_speed)
 		print("Fired at speed ", bolt_speed, "!")
+		if 5 > 2: # TODO: This just mocks out "if player has more bolts, add a new one"
+			currBolt = load("res://assets/StaticBolt.glb").instantiate()
+			currBolt.position = boltPosition
+			currBolt.rotation = boltRotation
+			add_child(currBolt)
+

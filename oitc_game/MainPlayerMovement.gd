@@ -40,7 +40,8 @@ func _physics_process(delta):
 
 func _input(event):
 	# Handle camera/model movement
+	# TODO: Use the basis for transforms as the mouse moves
 	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 		rotate_y(-event.relative.x * mouse_sensitivity)
-		$CameraPivot.rotate_x(-event.relative.y * mouse_sensitivity)
-		$CameraPivot.rotation.x = clamp($CameraPivot.rotation.x, -1.2, 1.2)
+		# $CameraPivot. -- Since I'll be making a new FPS model for players, I can just rotate everything right?
+		rotate_x(-event.relative.y * mouse_sensitivity)

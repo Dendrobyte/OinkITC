@@ -1,13 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://d3egg7nvxfglr"]
+[gd_scene load_steps=4 format=3 uid="uid://d3egg7nvxfglr"]
 
-[ext_resource type="PackedScene" uid="uid://bjxlx7xw4wxfg" path="res://assets/Bolt_v1.glb" id="1_peer7"]
+[ext_resource type="Script" path="res://model_nodes/BoltItem.gd" id="1_rhnj6"]
+[ext_resource type="PackedScene" uid="uid://bjxlx7xw4wxfg" path="res://assets/StaticBolt.glb" id="2_5t2u2"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_0id3p"]
 height = 1.18361
 
 [node name="Bolt Item" type="RigidBody3D"]
+script = ExtResource("1_rhnj6")
 
-[node name="Bolt_v1" parent="." instance=ExtResource("1_peer7")]
+[node name="Bolt_v1" parent="." instance=ExtResource("2_5t2u2")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(0.121362, 0, 0, 0, -4.37114e-08, 0.124468, 0, -1, -5.44067e-09, 0.00394565, 0.00986392, -0.59775)

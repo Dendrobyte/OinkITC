@@ -42,6 +42,5 @@ func _input(event):
 	# Handle camera/model movement
 	# TODO: Use the basis for transforms as the mouse moves
 	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
-		rotate_y(-event.relative.x * mouse_sensitivity)
-		# $CameraPivot. -- Since I'll be making a new FPS model for players, I can just rotate everything right?
-		rotate_x(-event.relative.y * mouse_sensitivity)
+		rotation.y += -event.relative.x * mouse_sensitivity
+		rotation.x += clamp(-event.relative.y * mouse_sensitivity, -1.48, 1.48)

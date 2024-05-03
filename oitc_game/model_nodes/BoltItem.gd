@@ -13,8 +13,8 @@ func _ready():
 func _process(delta):
 	if (fired):
 		# apply physics until it collides with a player model
-		print("Flying as fired!")
-		print("Position is", get_global_position())
+		#print("Flying as fired!")
+		#print("Position is", get_global_position())
 		var curr_motion = get_transform().origin
 		#move_and_collide(Vector3(curr_motion.x*speed_change*delta, curr_motion.y*speed_change*delta, curr_motion.z*speed_change*delta))
 		
@@ -24,7 +24,7 @@ func fire(speed: int):
 	if (fired == true):
 		queue_free() # Debugging step to remove it for now
 		print("removed!")
-	# TODO: Call parent "reload" functino where the check for more bolts will happen
+	# TODO: Call parent "reload" function where the check for more bolts will happen
 	print("Fired from bolt item function!")
 	print("The position is", get_global_position())
 	set_gravity_scale(0)

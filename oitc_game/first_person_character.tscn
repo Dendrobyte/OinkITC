@@ -4,7 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://bk0k7ykyj1rpc" path="res://model_nodes/CrossbowItem.tscn" id="2_7spyq"]
 [ext_resource type="Script" path="res://model_nodes/CrossbowItem.gd" id="3_6j3e8"]
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4eda3"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_cnx6i"]
+size = Vector3(1, 0.98645, 1)
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_3jj6g"]
 
@@ -14,8 +15,8 @@
 script = ExtResource("1_ge41p")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.00003, 0)
-shape = SubResource("CapsuleShape3D_4eda3")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.488035, 0)
+shape = SubResource("BoxShape3D_cnx6i")
 
 [node name="Crossbow" parent="CharacterBody3D" instance=ExtResource("2_7spyq")]
 transform = Transform3D(0.64, 0, 0, 0, 0.64, 0, 0, 0, 0.64, -0.623538, 0.770408, -1.11517)

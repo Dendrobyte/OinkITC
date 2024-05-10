@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bk0k7ykyj1rpc"]
 
 [ext_resource type="PackedScene" uid="uid://5u6nv6ighet2" path="res://assets/Crossbow_v1.glb" id="1_p386e"]
-[ext_resource type="PackedScene" uid="uid://bjxlx7xw4wxfg" path="res://assets/StaticBolt.glb" id="2_yyrop"]
+[ext_resource type="PackedScene" uid="uid://cl6ppgrnjjw3o" path="res://assets/StaticBolt.glb" id="2_yyrop"]
 
 [node name="CrossbowItem" type="Node3D"]
 

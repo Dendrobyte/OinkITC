@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://d3egg7nvxfglr"]
 
 [ext_resource type="Script" path="res://model_nodes/BoltItem.gd" id="1_rhnj6"]
-[ext_resource type="PackedScene" uid="uid://bjxlx7xw4wxfg" path="res://assets/StaticBolt.glb" id="2_5t2u2"]
+[ext_resource type="PackedScene" uid="uid://cl6ppgrnjjw3o" path="res://assets/StaticBolt.glb" id="2_5t2u2"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_0id3p"]
 height = 1.18361

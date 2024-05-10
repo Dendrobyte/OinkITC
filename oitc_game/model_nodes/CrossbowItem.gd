@@ -11,6 +11,7 @@ For now, just one until it's shot.
 var bolt_speed: int = 1 # TODO: move this?
 var originBoltPosition: Vector3
 var originBoltRotation: Vector3
+var originBoltBasis: Basis
 var staticBolt
 var hasStaticBolt: bool
 # TODO: hold on to start position, etc. here instead of in _process
@@ -18,14 +19,14 @@ var hasStaticBolt: bool
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	staticBolt = $StaticBolt # The one initially in the scene tree
-	update_origin_position_rotation($StaticBolt.global_position, $StaticBolt.global_rotation)
+	update_origin_position_rotation($StaticBolt.global_position, $StaticBolt.global_rotation, $StaticBolt.global_basis)
 	hasStaticBolt = true
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	# Always update the currBolt position for spawning a new one
-	if hasStaticBolt: update_origin_position_rotation(staticBolt.global_position, staticBolt.global_rotation)
+	if hasStaticBolt: update_origin_position_rotation(staticBolt.global_position, staticBolt.global_rotation, staticBolt.global_basis)
 
 	if Input.is_action_just_pressed("fire") and hasStaticBolt:
 		# Yeet the static bolt
@@ -38,11 +39,11 @@ func _process(_delta):
 		# NOTE: We have the luxury of not worrying about colliding with player because
 		#		collision detection will happen on an opposing client (if "my arrow" hits "someone", not if "an arrow" hits "me")
 		var newBoltToShoot = load("res://model_nodes/DynamicBoltItem.tscn").instantiate()
-		newBoltToShoot.scale = Vector3(0.64, 0.64, 0.64) # Should be making these params in the scene, I don't like a fixed number like this
-		newBoltToShoot.set_position(originBoltPosition)
-		newBoltToShoot.set_rotation(originBoltRotation)
 		get_parent().get_parent().add_child(newBoltToShoot)
-		newBoltToShoot.fire(4)
+		newBoltToShoot.set_global_position(originBoltPosition)
+		newBoltToShoot.global_basis = originBoltBasis
+		newBoltToShoot.scale = Vector3(0.64, 0.64, 0.64) # Should be making these params in the scene, I don't like a fixed number like this
+		newBoltToShoot.fire(64)
 
 		# Create a new static bolt, wait a sec to prevent collision
 		await get_tree().create_timer(1).timeout
@@ -54,6 +55,7 @@ func _process(_delta):
 
 
 
-func update_origin_position_rotation(new_position: Vector3, new_rotation: Vector3):
+func update_origin_position_rotation(new_position: Vector3, new_rotation: Vector3, new_basis: Basis):
 	originBoltPosition = new_position
 	originBoltRotation = new_rotation
+	originBoltBasis = new_basis

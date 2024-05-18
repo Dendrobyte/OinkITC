@@ -2,11 +2,11 @@
 
 Welcome to OinkITC! This game is my second game project (the first was a Tetris clone). It is inspired by the original [One in the Chamber](https://callofduty.fandom.com/wiki/One_in_the_Chamber) gamemode from Call of Duty. I first wrote the game [as a Minecraft plugin](https://github.com/oinkcraft/OneInTheChamber) a few years ago. The name / acronym looks like it's going to stick, with everything have a vague pig theme...
 
-You can find a devlog to wrap up the project [on my YouTube channel!](http://www.youtube.com/markbacon78). Goal is to make it April's devlog.
+You can find a devlog to wrap up the project [on my YouTube channel!](http://www.youtube.com/markbacon78). Unemployment- and its sudden lack of structure- has made for a rocky start for this game but we will get there.
 
 ## Goals
 
-This game is meant to be a _learning endeavor._ My primary focus is creating a multiplayer game; both game and server. I've avoided networking my whole life but I've been surprisingly fascinated by it reading lately, and I've started with [Beej's Guide(s)](https://beej.us/guide/). Anyway, you can find the milestones for the game below. I will aim to meet these milestones and optionally spend more time on the game, but it will largely be imperfect.
+This game is meant to be a _learning endeavor._ My primary focus is creating a multiplayer game; both game and server. I've avoided networking my whole life but I've been incredibly fascinated by reading about it lately, and I've started with [Beej's Guide(s)](https://beej.us/guide/). Anyway, you can find the milestones for the game below. I will aim to meet these milestones and optionally spend more time on the game, but it will largely be imperfect.
 
 As per [Seth Godin](https://seths.blog/2022/01/on-schedule/),
 

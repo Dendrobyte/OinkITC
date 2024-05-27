@@ -15,12 +15,7 @@ func _process(delta):
 		var dummy = collision.get_collider(0)
 		if dummy.name == "DummyStaticBody3D":
 			 # TODO: I don't like this, better to have an Area3D?
-			dummy.play_hit_sound()
-			var newStaticBolt = load("res://assets/StaticBolt.glb").instantiate()
-			dummy.add_child(newStaticBolt)
-			newStaticBolt.set_global_position(global_position)
-			newStaticBolt.global_basis = global_basis
-			newStaticBolt.scale = Vector3(0.64, 0.64, 0.64) # cri
+			dummy.is_hit()
 			queue_free()
 
 func fire(speed: int):

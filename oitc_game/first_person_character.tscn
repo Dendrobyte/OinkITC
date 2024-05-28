@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://br1o760sbef62"]
 
-[ext_resource type="Script" path="res://MainPlayerMovement.gd" id="1_ge41p"]
+[ext_resource type="Script" path="res://scripts/MainPlayerMovement.gd" id="1_ge41p"]
 [ext_resource type="PackedScene" uid="uid://bk0k7ykyj1rpc" path="res://model_nodes/CrossbowItem.tscn" id="2_7spyq"]
 [ext_resource type="Script" path="res://model_nodes/CrossbowItem.gd" id="3_6j3e8"]
 

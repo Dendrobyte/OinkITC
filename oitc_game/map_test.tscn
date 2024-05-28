@@ -1,6 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://tsjqjcqyrxwx"]
-
-[ext_resource type="PackedScene" uid="uid://djsoaxrlnwnl8" path="res://assets/PlayerModel.glb" id="1_eo5hs"]
+[gd_scene load_steps=3 format=3 uid="uid://tsjqjcqyrxwx"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_n08gm"]
 
@@ -10,9 +8,6 @@
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.0875557, 0.99616, 0, -0.99616, 0.0875557, 0.0633392, 19.1117, 0.0669785)
-
-[node name="PlayerModel" parent="." instance=ExtResource("1_eo5hs")]
-transform = Transform3D(0.830674, 0, -0.55676, 0, 1, 0, 0.55676, 0, 0.830674, 14.2749, 1.29917, -3.44323)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 

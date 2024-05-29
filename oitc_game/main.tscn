@@ -1,32 +1,34 @@
-[gd_scene load_steps=4 format=3 uid="uid://dtmkxjcyt54pv"]
+[gd_scene load_steps=5 format=3 uid="uid://dtmkxjcyt54pv"]
 
+[ext_resource type="Script" path="res://MainScript.gd" id="1_2hdtu"]
 [ext_resource type="PackedScene" uid="uid://tsjqjcqyrxwx" path="res://map_test.tscn" id="1_71idi"]
 [ext_resource type="PackedScene" uid="uid://br1o760sbef62" path="res://first_person_character.tscn" id="2_8628q"]
 [ext_resource type="PackedScene" uid="uid://dexyubrno5oyr" path="res://scenes/Dummy.tscn" id="3_bdyh6"]
 
 [node name="Main" type="Node"]
+script = ExtResource("1_2hdtu")
 
 [node name="Map" parent="." instance=ExtResource("1_71idi")]
 
-[node name="Node3D" parent="." instance=ExtResource("2_8628q")]
+[node name="Player" parent="." instance=ExtResource("2_8628q")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.115112, 0.947526, -0.151949)
 
-[node name="Dummies_Temp" type="Node3D" parent="."]
+[node name="Dummies" type="Node3D" parent="."]
 
-[node name="DummyParent" parent="Dummies_Temp" instance=ExtResource("3_bdyh6")]
+[node name="DummyParent" parent="Dummies" instance=ExtResource("3_bdyh6")]
 transform = Transform3D(0.55134, 0, -0.83428, 0, 1, 0, 0.83428, 0, 0.55134, 10.6192, 0.861041, -4.09177)
 
-[node name="DummyParent2" parent="Dummies_Temp" instance=ExtResource("3_bdyh6")]
+[node name="DummyParent2" parent="Dummies" instance=ExtResource("3_bdyh6")]
 transform = Transform3D(0.813375, 0, 0.58174, 0, 1, 0, -0.58174, 0, 0.813375, -7.01278, 0.861041, -9.40812)
 
-[node name="DummyParent3" parent="Dummies_Temp" instance=ExtResource("3_bdyh6")]
+[node name="DummyParent3" parent="Dummies" instance=ExtResource("3_bdyh6")]
 transform = Transform3D(-0.930724, 0, 0.365722, 0, 1, 0, -0.365722, 0, -0.930724, -7.54226, 0.861041, 6.46277)
 
-[node name="DummyParent4" parent="Dummies_Temp" instance=ExtResource("3_bdyh6")]
+[node name="DummyParent4" parent="Dummies" instance=ExtResource("3_bdyh6")]
 transform = Transform3D(0.86537, 0, 0.501133, 0, 1, 0, -0.501133, 0, 0.86537, -15.2363, 0.861041, -2.25469)
 
-[node name="DummyParent5" parent="Dummies_Temp" instance=ExtResource("3_bdyh6")]
+[node name="DummyParent5" parent="Dummies" instance=ExtResource("3_bdyh6")]
 transform = Transform3D(-0.711131, 0, -0.70306, 0, 1, 0, 0.70306, 0, -0.711131, 14.4593, 0.861041, 4.10697)
 
-[node name="DummyParent6" parent="Dummies_Temp" instance=ExtResource("3_bdyh6")]
+[node name="DummyParent6" parent="Dummies" instance=ExtResource("3_bdyh6")]
 transform = Transform3D(-0.711131, 0, -0.70306, 0, 1, 0, 0.70306, 0, -0.711131, 5.43163, 0.861041, 2.12064)

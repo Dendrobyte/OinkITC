@@ -11,21 +11,19 @@ height = 1.56665
 [sub_resource type="BoxShape3D" id="BoxShape3D_lr0jx"]
 size = Vector3(0.0667114, 0.510742, 0.065918)
 
-[node name="DummyParent" type="Node3D"]
-
-[node name="DummyStaticBody3D" type="StaticBody3D" parent="."]
+[node name="DummyStaticBody3D" type="StaticBody3D"]
 script = ExtResource("1_nqff2")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="DummyStaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.27807, 0)
 shape = SubResource("CapsuleShape3D_82r0u")
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="DummyStaticBody3D"]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000457764, 0.244629, -0.000732422)
 shape = SubResource("BoxShape3D_lr0jx")
 
-[node name="DummyModel" parent="DummyStaticBody3D" instance=ExtResource("1_ev07y")]
+[node name="DummyModel" parent="." instance=ExtResource("1_ev07y")]
 
-[node name="SoundPlayer" type="AudioStreamPlayer3D" parent="DummyStaticBody3D"]
+[node name="SoundPlayer" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("3_6mtc3")
 volume_db = 21.205

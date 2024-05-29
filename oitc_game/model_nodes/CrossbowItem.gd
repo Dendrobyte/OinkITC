@@ -8,6 +8,7 @@ For now, just one until it's shot.
 """
 
 @export_range(1, 200)
+var player_id
 var bolt_speed: int = 1 # TODO: move this?
 var originBoltPosition: Vector3
 var originBoltRotation: Vector3
@@ -21,6 +22,7 @@ func _ready():
 	staticBolt = $StaticBolt # The one initially in the scene tree
 	update_origin_position_rotation($StaticBolt.global_position, $StaticBolt.global_rotation, $StaticBolt.global_basis)
 	hasStaticBolt = true
+	player_id = get_parent().PLAYER_ID
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -43,7 +45,7 @@ func _process(_delta):
 		newBoltToShoot.set_global_position(originBoltPosition)
 		newBoltToShoot.global_basis = originBoltBasis
 		newBoltToShoot.scale = Vector3(0.64, 0.64, 0.64) # Should be making these params in the scene, I don't like a fixed number like this
-		newBoltToShoot.fire(64)
+		newBoltToShoot.fire(64, player_id)
 
 		# Create a new static bolt, wait a sec to prevent collision
 		await get_tree().create_timer(1).timeout
